@@ -166,12 +166,18 @@ body {
   margin: 1.5rem 0;
   overflow-x: auto;
   position: relative;
+  color: #e6edf3;
 }
 
 .prose pre code {
   font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
   font-size: 0.875rem;
   line-height: 1.7;
+  color: #e6edf3;
+}
+
+.prose pre code * {
+  color: inherit;
 }
 
 .prose code {
@@ -184,6 +190,15 @@ body {
 
 .dark .prose code {
   background: rgba(255, 255, 255, 0.1);
+}
+
+.hljs {
+  background: var(--code-bg) !important;
+  color: #e6edf3 !important;
+}
+
+.hljs * {
+  color: inherit !important;
 }
 
 .dark .hljs {
