@@ -15,9 +15,11 @@ export interface BlogPost {
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 
 function calculateReadingTime(content: string): number {
-  const wordsPerMinute = 200;
-  const words = content.trim().split(/\s+/).length;
-  return Math.ceil(words / wordsPerMinute);
+  const wordsPerMinute = 400;
+  // 中文按字符数估算，英文按空格分词
+  const chineseChars = (content.match(/[\u4e00-\u9fff]/g) || []).length;
+  const englishWords = content.replace(/[\u4e00-\u9fff]/g, '').trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.ceil((chineseChars + englishWords) / wordsPerMinute));
 }
 
 function extractFirstHeading(content: string): string | null {
@@ -54,7 +56,12 @@ export function getAllPosts(): BlogPost[] {
       const { data, content } = matter(fileContents);
       
       const title = data.title || extractFirstHeading(content) || slug;
-      const date = data.date || new Date().toISOString().split('T')[0];
+      // 优先 frontmatter 的 date，否则用文件修改时间
+      let date = data.date;
+      if (!date) {
+        const stats = fs.statSync(fullPath);
+        date = stats.mtime.toISOString().split('T')[0];
+      }
       const tags = data.tags || [];
       const description = data.description || '';
       const excerpt = data.description || extractExcerpt(content);
@@ -76,7 +83,9 @@ export function getAllPosts(): BlogPost[] {
 }
 
 export function getPostBySlug(slug: string): BlogPost | null {
-  const fullPath = path.join(postsDirectory, `${slug}.md`);
+  // 处理浏览器编码过的 slug
+  const decodedSlug = decodeURIComponent(slug);
+  const fullPath = path.join(postsDirectory, `${decodedSlug}.md`);
   
   if (!fs.existsSync(fullPath)) {
     return null;
@@ -85,14 +94,18 @@ export function getPostBySlug(slug: string): BlogPost | null {
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
   
-  const title = data.title || extractFirstHeading(content) || slug;
-  const date = data.date || new Date().toISOString().split('T')[0];
+  const title = data.title || extractFirstHeading(content) || decodedSlug;
+  let date = data.date;
+  if (!date) {
+    const stats = fs.statSync(fullPath);
+    date = stats.mtime.toISOString().split('T')[0];
+  }
   const tags = data.tags || [];
   const description = data.description || '';
   const excerpt = data.description || extractExcerpt(content);
   
   return {
-    slug,
+    slug: decodedSlug,
     title,
     date,
     excerpt,
@@ -121,7 +134,8 @@ export function getPostsByTag(tag: string): BlogPost[] {
 
 export function getAdjacentPosts(slug: string): { prev: BlogPost | null; next: BlogPost | null } {
   const posts = getAllPosts();
-  const index = posts.findIndex((post) => post.slug === slug);
+  const decodedSlug = decodeURIComponent(slug);
+  const index = posts.findIndex((post) => post.slug === decodedSlug);
   
   if (index === -1) {
     return { prev: null, next: null };

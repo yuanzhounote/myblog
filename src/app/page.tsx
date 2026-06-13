@@ -35,7 +35,7 @@ export default function Home() {
                     key={post.slug}
                     className="border-b border-gray-200 dark:border-gray-800 pb-8 last:border-0"
                   >
-                    <Link href={`/blog/${post.slug}`} className="group">
+                    <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group">
                       <h3 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                         {post.title}
                       </h3>

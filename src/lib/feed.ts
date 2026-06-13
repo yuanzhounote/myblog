@@ -10,7 +10,7 @@ export function generateSitemap(): string {
   const postUrls = posts
     .map(
       (post) => `  <url>
-    <loc>${BASE_URL}/blog/${post.slug}</loc>
+    <loc>${BASE_URL}/blog/${encodeURI(post.slug)}</loc>
     <lastmod>${post.date}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -49,8 +49,8 @@ export function generateRSS(): string {
     .map(
       (post) => `    <item>
       <title>${post.title}</title>
-      <link>${BASE_URL}/blog/${post.slug}</link>
-      <guid>${BASE_URL}/blog/${post.slug}</guid>
+      <link>${BASE_URL}/blog/${encodeURIComponent(post.slug)}</link>
+      <guid>${BASE_URL}/blog/${encodeURIComponent(post.slug)}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description><![CDATA[${post.excerpt}]]></description>
     </item>`

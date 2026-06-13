@@ -42,7 +42,9 @@ export default async function BlogPostPage({
 
   const { prev, next } = getAdjacentPosts(slug);
   const contentHtml = await renderMarkdown(post.content);
-  const readingTime = Math.ceil(post.content.trim().split(/\s+/).length / 200);
+  const chineseChars = (post.content.match(/[\u4e00-\u9fff]/g) || []).length;
+  const englishWords = post.content.replace(/[\u4e00-\u9fff]/g, '').trim().split(/\s+/).filter(Boolean).length;
+  const readingTime = Math.max(1, Math.ceil((chineseChars + englishWords) / 400));
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -89,7 +91,7 @@ export default async function BlogPostPage({
             <div className="flex justify-between gap-4">
               {prev ? (
                 <Link
-                  href={`/blog/${prev.slug}`}
+                  href={`/blog/${encodeURIComponent(prev.slug)}`}
                   className="flex-1 group"
                 >
                   <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
@@ -105,7 +107,7 @@ export default async function BlogPostPage({
               
               {next ? (
                 <Link
-                  href={`/blog/${next.slug}`}
+                  href={`/blog/${encodeURIComponent(next.slug)}`}
                   className="flex-1 text-right group"
                 >
                   <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
