@@ -47,7 +47,7 @@ export default function Navigation() {
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-xl font-bold text-gray-900 dark:text-white">
-            My Blog
+            远舟笔记
           </Link>
 
           {/* Desktop Navigation */}

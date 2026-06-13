@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "My Blog | 技术博客",
-  description: "一个关于 Web 开发、编程和技术的个人博客",
-  keywords: ["博客", "技术", "Web 开发", "Next.js", "React", "TypeScript"],
+  title: "远舟笔记",
+  description: "一个文案从业者的学习笔记，关于AI工具、知识管理与个人成长。",
+  keywords: ["博客", "AI", "知识管理", "个人成长", "效率工具", "Obsidian", "文案"],
 };
 
 export default function RootLayout({

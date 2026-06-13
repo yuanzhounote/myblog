@@ -14,9 +14,9 @@ export default function Home() {
       <main className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <section className="mb-12">
-            <h1 className="text-4xl font-bold mb-4">My Blog</h1>
+            <h1 className="text-4xl font-bold mb-4">远舟笔记</h1>
             <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">
-              一个关于 Web 开发、编程和技术的个人博客
+              一个文案从业者的学习笔记，关于AI工具、知识管理与个人成长。
             </p>
             <Link
               href="/blog"

@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import { getAllTags } from '@/lib/blog';
 
 export const metadata = {
-  title: '标签 | My Blog',
+  title: '标签 | 远舟笔记',
   description: '浏览所有文章标签',
 };
 

@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { getAllPosts } from './blog';
 
-const BASE_URL = 'https://myblog.vercel.app';
+const BASE_URL = 'https://myblog-umber-nine.vercel.app';
 
 export function generateSitemap(): string {
   const posts = getAllPosts();
@@ -60,9 +60,9 @@ export function generateRSS(): string {
   return `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My Blog</title>
+    <title>远舟笔记</title>
     <link>${BASE_URL}</link>
-    <description>一个关于 Web 开发、编程和技术的个人博客</description>
+    <description>一个文案从业者的学习笔记，关于AI工具、知识管理与个人成长。</description>
     <language>zh-CN</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
     <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml" />

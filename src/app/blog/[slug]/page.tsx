@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `${post.title} | My Blog`,
+    title: `${post.title} | 远舟笔记`,
     description: post.description || post.excerpt,
     keywords: post.tags,
   };

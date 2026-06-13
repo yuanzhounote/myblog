@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="text-sm text-gray-500 dark:text-gray-400">
-            © {new Date().getFullYear()} My Blog. All rights reserved.
+            © {new Date().getFullYear()} 远舟笔记
           </div>
           
           <div className="flex items-center gap-6">
