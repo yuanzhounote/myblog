@@ -29,10 +29,13 @@ function extractFirstHeading(content: string): string | null {
 
 function extractExcerpt(content: string): string {
   const cleaned = content
-    .replace(/^#{1,6}\s+.+$/gm, '')
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/[*_~`]/g, '')
-    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/^#{1,6}\s+.+$/gm, '')        // 去除标题
+    .replace(/```[\s\S]*?```/g, '')         // 去除代码块
+    .replace(/!\[([^\]]*)\]\([^)]+\)/g, '') // 去除图片
+    .replace(/^>\s*/gm, '')                  // 去除引用前缀
+    .replace(/^---+$/gm, '')                // 去除水平分隔线
+    .replace(/[*_~`]/g, '')                 // 去除行内格式
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')// 去除链接保留文字
     .trim();
   
   const lines = cleaned.split('\n').filter(line => line.trim().length > 0);
