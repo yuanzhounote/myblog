@@ -53,7 +53,7 @@ xattr -cr /Applications/MiMo-Code.app
 
 打开 MiMo Code 后，它会问你创建一个新项目。我给项目起名为 `mimocode-myblog`，并选择在本机建立本地 Git 仓库。
 
-![项目创建](file-20260613171001217.jpg)
+![项目创建](/images/file-20260613171001217.jpg)
 
 然后 MiMo Code 会问你技术栈偏好，给了几个选项：
 
@@ -61,7 +61,7 @@ xattr -cr /Applications/MiMo-Code.app
 2. React/Next.js Blog
 3. Vue/Nuxt Blog
 4. Simple HTML/CSS/JS
-![](file-20260613171001209.jpg)
+![](/images/file-20260613171001209.jpg)
 我选了 **React/Next.js Blog**。几个理由：
 
 - Next.js 自带路由、SEO、图片优化，做博客几乎零配置
@@ -164,7 +164,7 @@ git push -u origin main
 
 点 **Add New Project**，选择 `你的用户名/myblog` 仓库。Vercel 自动识别为 Next.js 项目，不需要改任何构建配置。
 
-![Vercel 导入项目](file-20260613171001207.jpg)
+![Vercel 导入项目](/images/file-20260613171001207.jpg)
 
 ### 3. 一键部署
 
@@ -174,7 +174,7 @@ git push -u origin main
 https://myblog-xxxxx.vercel.app
 ```
 
-![部署成功](file-20260613171001208.jpg)
+![部署成功](/images/file-20260613171001208.jpg)
 
 ### 后续更新：push 即发布
 
