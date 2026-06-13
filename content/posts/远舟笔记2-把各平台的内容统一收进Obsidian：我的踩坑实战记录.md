@@ -67,7 +67,7 @@ Obsidian 的双向链接刚好解决这个问题。
 
 然后就报错了：Vault not found。
 
-![](assets/远舟笔记2-把各平台的内容统一收进Obsidian：我的踩坑实战记录/file-20260508182650331.png)
+![](/images/file-20260508182650331.png)
 
 查了半天才发现——**Obsidian Clipper 不认盘符路径，它只认 Obsidian 里显示的库名称。**
 
@@ -108,7 +108,7 @@ Obsidian 的双向链接刚好解决这个问题。
 4. 保存到本地
 5. 打开 Clipper 设置 → Templates → Import → 选择刚才的文件
 
-![file-20260508182650329|267](assets/远舟笔记2-把各平台的内容统一收进Obsidian：我的踩坑实战记录/file-20260508182650329.png)
+![file-20260508182650329|267](/images/file-20260508182650329.png)
 
 导入之后，中文平台的抓取质量直接上一个台阶。
 
