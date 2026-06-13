@@ -1,8 +1,4 @@
-# 我用 Obsidian + WorkBuddy 实战搭建了AI知识库：保姆教程
-
-> 远舟笔记 · 第4篇
-
----
+>远舟笔记·第4篇
 
 上一篇我们学了用 Obsidian Clipper 把各平台的内容剪藏到本地。
 

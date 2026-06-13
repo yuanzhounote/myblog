@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import CopyButton from '@/components/CopyButton';
 import { getAllPosts, getPostBySlug, getAdjacentPosts } from '@/lib/blog';
 import { renderMarkdown } from '@/lib/markdown';
 
