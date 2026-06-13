@@ -33,6 +33,23 @@ const COPY_SCRIPT = `
 })();
 </script>`;
 
+function rehypeRewriteImages() {
+  return (tree: any) => {
+    const visit = (node: any) => {
+      if (node.type === 'element' && node.tagName === 'img') {
+        const src = node.properties?.src;
+        if (src && !src.startsWith('http') && !src.startsWith('/')) {
+          node.properties.src = `/content/assets/${src}`;
+        }
+      }
+      if (node.children) {
+        node.children.forEach(visit);
+      }
+    };
+    visit(tree);
+  };
+}
+
 export async function renderMarkdown(content: string): Promise<string> {
   const result = await unified()
     .use(remarkParse)
@@ -47,6 +64,7 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(rehypeAutolinkHeadings, {
       behavior: 'wrap',
     })
+    .use(rehypeRewriteImages)
     .use(rehypeStringify)
     .process(content);
 
