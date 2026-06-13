@@ -23,7 +23,9 @@ function calculateReadingTime(content: string): number {
 }
 
 function extractFirstHeading(content: string): string | null {
-  const match = content.match(/^#\s+(.+)$/m);
+  // 先去掉代码块内容，避免代码注释被误判为标题
+  const withoutCode = content.replace(/```[\s\S]*?```/g, '');
+  const match = withoutCode.match(/^#\s+(.+)$/m);
   return match ? match[1].trim() : null;
 }
 
