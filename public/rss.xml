@@ -5,7 +5,7 @@
     <link>https://myblog-umber-nine.vercel.app</link>
     <description>一个文案从业者的学习笔记，关于AI工具、知识管理与个人成长。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 13 Jun 2026 07:08:41 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2026 07:12:40 GMT</lastBuildDate>
     <atom:link href="https://myblog-umber-nine.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>远舟笔记1-别把Obsidian当成第二大脑</title>
@@ -37,20 +37,22 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B010-%E8%A7%86%E9%A2%91%E5%8F%B7%E7%9A%84%E5%B9%B2%E8%B4%A7%EF%BC%8C%20%E4%B8%80%E6%8B%9B%22%E7%82%B9%E8%B5%9E%22%E5%8F%98%E6%88%90%22%E7%AC%94%E8%AE%B0%22</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B010-%E8%A7%86%E9%A2%91%E5%8F%B7%E7%9A%84%E5%B9%B2%E8%B4%A7%EF%BC%8C%20%E4%B8%80%E6%8B%9B%22%E7%82%B9%E8%B5%9E%22%E5%8F%98%E6%88%90%22%E7%AC%94%E8%AE%B0%22</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[> 远舟笔记 · 第10篇
+      <description><![CDATA[>远舟笔记·第10篇
 ![](assets/远舟笔记10-视频号的干货，%20一招"点赞"变成"笔记"/file-20260606220304748.jpg)
 > 你有没有这样过：刷视频号刷到好内容，点了赞，心里说"等会儿看"——然后就再也没有然后了。
 >
 > 更扎心的是，好不容易有时间看完了，问自己"到底讲了什么"，说不清楚。
 >
-> 现在我找到一个方案，让视频号里的干货，变成 Obsid]]></description>
+> 现在我找到一个方案，让视频号里的干货，变成 Obsidian]]></description>
     </item>
     <item>
       <title>远舟笔记11-公众号配图不用愁了：我试了两个AI画图工具，一个就在微信里</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B011-%E5%85%AC%E4%BC%97%E5%8F%B7%E9%85%8D%E5%9B%BE%E4%B8%8D%E7%94%A8%E6%84%81%E4%BA%86%EF%BC%9A%E6%88%91%E8%AF%95%E4%BA%86%E4%B8%A4%E4%B8%AAAI%E7%94%BB%E5%9B%BE%E5%B7%A5%E5%85%B7%EF%BC%8C%E4%B8%80%E4%B8%AA%E5%B0%B1%E5%9C%A8%E5%BE%AE%E4%BF%A1%E9%87%8C</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B011-%E5%85%AC%E4%BC%97%E5%8F%B7%E9%85%8D%E5%9B%BE%E4%B8%8D%E7%94%A8%E6%84%81%E4%BA%86%EF%BC%9A%E6%88%91%E8%AF%95%E4%BA%86%E4%B8%A4%E4%B8%AAAI%E7%94%BB%E5%9B%BE%E5%B7%A5%E5%85%B7%EF%BC%8C%E4%B8%80%E4%B8%AA%E5%B0%B1%E5%9C%A8%E5%BE%AE%E4%BF%A1%E9%87%8C</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[有读者问我：「远舟，你的公众号封面图是哪个AI做的？」
+      <description><![CDATA[>远舟笔记·第11篇
+
+有读者问我：「远舟，你的公众号封面图是哪个AI做的？」
 
 为了回答这个问题，我试了两个工具：
 
@@ -65,8 +67,7 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 
 
 
-如果你是公众号运营者，你可能都没注意过这个功能。在编辑器的封面图区域，点「从图片库选择」——右下角有个「AI生图」入口，够隐蔽的。
-]]></description>
+如果你是公众号运营者，你可能都没注意过这个功能。在编辑器的封面图区域，点「从图片库选择」——右下角有个「AI]]></description>
     </item>
     <item>
       <title>远舟笔记12-高考第一天，我让两个AI写作文，意外看到了未来写作的样子</title>
@@ -87,15 +88,11 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 > **材料：** 词语是表达思想情感的载体，也是展现社会生活变]]></description>
     </item>
     <item>
-      <title>token贵，我替你省了：DeepSeek 没眼睛，两条免费路</title>
+      <title>远舟笔记13-token贵，我替你省了：DeepSeek 没眼睛，两条免费路</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B013-token%E8%B4%B5%EF%BC%8C%E6%88%91%E6%9B%BF%E4%BD%A0%E7%9C%81%E4%BA%86%EF%BC%9ADeepSeek%20%E6%B2%A1%E7%9C%BC%E7%9D%9B%EF%BC%8C%E4%B8%A4%E6%9D%A1%E5%85%8D%E8%B4%B9%E8%B7%AF</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B013-token%E8%B4%B5%EF%BC%8C%E6%88%91%E6%9B%BF%E4%BD%A0%E7%9C%81%E4%BA%86%EF%BC%9ADeepSeek%20%E6%B2%A1%E7%9C%BC%E7%9D%9B%EF%BC%8C%E4%B8%A4%E6%9D%A1%E5%85%8D%E8%B4%B9%E8%B7%AF</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[> 远舟笔记 · 第13篇
-
----
-
-
+      <description><![CDATA[>远舟笔记·第13篇
 
 > 你有没有遇到过这种情况：跟AI聊一个问题，想说"你看这张图就明白了"，结果发现图发过去它看不见。我原来也觉得没什么大不了——文字描述也能说清楚。直到有一天，我真想让它帮我读一张表格截图……
 
@@ -105,7 +102,7 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 
 但它有一个硬伤：**没有视觉**。
 
-日常聊天、写文章、整理]]></description>
+日常聊天、写文章、整理资料，它都干得很好。]]></description>
     </item>
     <item>
       <title>远舟笔记2-把各平台的内容统一收进Obsidian：我的踩坑实战记录</title>
@@ -174,6 +171,28 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 ]]></description>
     </item>
     <item>
+      <title>远舟笔记5-微信聊天里的文件，我用这个工具做了一次"永久归档"</title>
+      <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B05-%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E9%87%8C%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E6%88%91%E7%94%A8%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%E5%81%9A%E4%BA%86%E4%B8%80%E6%AC%A1%22%E6%B0%B8%E4%B9%85%E5%BD%92%E6%A1%A3%22</link>
+      <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B05-%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E9%87%8C%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E6%88%91%E7%94%A8%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%E5%81%9A%E4%BA%86%E4%B8%80%E6%AC%A1%22%E6%B0%B8%E4%B9%85%E5%BD%92%E6%A1%A3%22</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[>远舟笔记·第5篇
+
+![](file-20260518104125172.jpg)
+上周筹备活动，领导说："去年那版方案你找一下。"
+
+我心想，简单，翻聊天记录嘛。
+
+结果翻了40分钟。
+
+从"方案终稿"翻到"方案终稿2"，再到"方案终稿定版""方案终稿定版不改了"——你没猜错，文件全部过期，一个都打不开。
+
+那一刻我突然意识到一件事：
+
+**微信不是文件夹，它是条河。**
+
+所有文件都在水上漂]]></description>
+    </item>
+    <item>
       <title>远舟笔记5-微信聊天里的文件，我用这个工具做了一次“永久归档”</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B05-%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E9%87%8C%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E6%88%91%E7%94%A8%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%E5%81%9A%E4%BA%86%E4%B8%80%E6%AC%A1%E2%80%9C%E6%B0%B8%E4%B9%85%E5%BD%92%E6%A1%A3%E2%80%9D</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B05-%E5%BE%AE%E4%BF%A1%E8%81%8A%E5%A4%A9%E9%87%8C%E7%9A%84%E6%96%87%E4%BB%B6%EF%BC%8C%E6%88%91%E7%94%A8%E8%BF%99%E4%B8%AA%E5%B7%A5%E5%85%B7%E5%81%9A%E4%BA%86%E4%B8%80%E6%AC%A1%E2%80%9C%E6%B0%B8%E4%B9%85%E5%BD%92%E6%A1%A3%E2%80%9D</guid>
@@ -201,7 +220,7 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B06-%E8%85%BE%E8%AE%AF%E7%BB%99Windows%E7%94%A8%E6%88%B7%E9%85%8D%E4%BA%866%E4%B8%AAAI%E7%89%9B%E9%A9%AC%EF%BC%8C%E6%88%91%E8%AF%95%E4%BA%86%E4%B8%80%E5%A4%A9</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B06-%E8%85%BE%E8%AE%AF%E7%BB%99Windows%E7%94%A8%E6%88%B7%E9%85%8D%E4%BA%866%E4%B8%AAAI%E7%89%9B%E9%A9%AC%EF%BC%8C%E6%88%91%E8%AF%95%E4%BA%86%E4%B8%80%E5%A4%A9</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[![](file-20260521174507401.jpg)
+      <description><![CDATA[>远舟笔记·第6篇
 
 你有没有想过：
 
@@ -215,45 +234,50 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 
 电脑自己就干了。
 
-今天（5月21日），腾讯发布了操作系统级AI助手——马维斯（Marvis）。名字蹭的贾维斯，功能嘛……我第一时间装上试了，说说真实感受]]></description>
+今天（5月21日），腾讯发布了操作系统级AI助手——马维斯（Marvis）。名字蹭的贾维斯，功能嘛……我第一时间装上试了，说说真实感受。
+
+
+
+一句话：**它不是跟你聊天的AI，]]></description>
     </item>
     <item>
       <title>远舟笔记7-IMA Copilot尝鲜体验，手机里的文件管家</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B07-IMA%20Copilot%E5%B0%9D%E9%B2%9C%E4%BD%93%E9%AA%8C%EF%BC%8C%E6%89%8B%E6%9C%BA%E9%87%8C%E7%9A%84%E6%96%87%E4%BB%B6%E7%AE%A1%E5%AE%B6</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B07-IMA%20Copilot%E5%B0%9D%E9%B2%9C%E4%BD%93%E9%AA%8C%EF%BC%8C%E6%89%8B%E6%9C%BA%E9%87%8C%E7%9A%84%E6%96%87%E4%BB%B6%E7%AE%A1%E5%AE%B6</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[**标题**：《我让IMA Copilot读了我的6篇笔记，它给我交了一份“工作流体检报告”》  
-**副标题**：在2026年，我似乎终于找到了那个能帮我“消化”知识的AI管家
+      <description><![CDATA[>远舟笔记·第7篇
+
+我是远舟，一名专注于探索AI工具链的写作者。在之前的笔记里，我把 IMA 比作河边的仓库，解决了我们微信文件过期的焦虑。但最近拿到了 IMA Copilot 的内测权限后，我发现这个比喻需要更新了。我想测试一下，这个号称"智能管家"的家伙，到底能不能读懂我脑子里那些关于Obsidian + WorkBuddy + IMA的想法。
 
 ---
 
 
 
-我是远舟，一名专注于探索AI工具链的写作者。  
-在之前的笔记里，我把 IMA 比作河边的仓库，解决了我们微信文件过期的焦虑。但最近拿到了 IMA Copilot 的内测权限后，我发现这个比喻需要更新了。]]></description>
+我是远舟，一名专注于探索AI工]]></description>
     </item>
     <item>
       <title>方式一：官方脚本安装（通用）</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B08-%E6%88%91%E5%9C%A8Mac%E4%B8%8A%E5%85%BB%E4%BA%86%E4%B8%80%E4%B8%AAAI%E5%8A%A9%E6%89%8B%EF%BC%9A%E8%AE%A4%E8%AF%86%E6%88%91%E3%80%81%E8%AF%BB%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0%EF%BC%8C%E6%9C%88%E8%B4%B9%E4%B8%8D%E5%88%B020%E5%9D%97</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B08-%E6%88%91%E5%9C%A8Mac%E4%B8%8A%E5%85%BB%E4%BA%86%E4%B8%80%E4%B8%AAAI%E5%8A%A9%E6%89%8B%EF%BC%9A%E8%AE%A4%E8%AF%86%E6%88%91%E3%80%81%E8%AF%BB%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0%EF%BC%8C%E6%9C%88%E8%B4%B9%E4%B8%8D%E5%88%B020%E5%9D%97</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[**标题**：我在Mac上养了一个AI助手：认识我、读我的笔记，月费不到20块
-
-**副标题**：Hermes + DeepSeek + Obsidian，资料在本地、算力在云端、按量付费
-![](file-20260530172031915.jpg)
-
----
+      <description><![CDATA[>远舟笔记·第8篇
 
 我以前用 AI 最大的挫败感，不是它不聪明，而是它不认识我。
 
-我花了很多时间跟它解释：我是谁、我写什么、我关心什么、我喜欢什么表达方]]></description>
+我花了很多时间跟它解释：我是谁、我写什么、我关心什么、我喜欢什么表达方式。可下一次打开，它又像第一次见我。
+
+一个不会成长的 AI，再强也只是临时工。
+
+所以我最近在 Mac 上搭了一套自己的 AI 助手：资料放在本地 Obsidian，模型用 DeepSeek API，外面套一层 Hermes Agent。它能]]></description>
     </item>
     <item>
       <title>远舟笔记9-语音+AI：我的零成本日记方案</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B09-%E8%AF%AD%E9%9F%B3%2BAI%EF%BC%9A%E6%88%91%E7%9A%84%E9%9B%B6%E6%88%90%E6%9C%AC%E6%97%A5%E8%AE%B0%E6%96%B9%E6%A1%88</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B09-%E8%AF%AD%E9%9F%B3%2BAI%EF%BC%9A%E6%88%91%E7%9A%84%E9%9B%B6%E6%88%90%E6%9C%AC%E6%97%A5%E8%AE%B0%E6%96%B9%E6%A1%88</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[> 灵感转瞬即逝，日记三天打鱼。现在我靠一张嘴，每天10秒捕捉，晚上自动出一篇日记。
+      <description><![CDATA[>远舟笔记·第9篇
+
+> 灵感转瞬即逝，日记三天打鱼。现在我靠一张嘴，每天10秒捕捉，晚上自动出一篇日记。
 
 ---
 
@@ -265,7 +289,7 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 
 一天过完了，回想今天做了什么——好像做了很多，又好像什么都没做。想复盘，但无从下手。
 
-这两件事反复发生，根子不是不自律——是**记录的门槛]]></description>
+这两件事反复发生，根子不是不自]]></description>
     </item>
   </channel>
 </rss>
