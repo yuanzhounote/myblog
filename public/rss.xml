@@ -5,7 +5,7 @@
     <link>https://myblog-umber-nine.vercel.app</link>
     <description>一个文案从业者的学习笔记，关于AI工具、知识管理与个人成长。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 13 Jun 2026 07:56:23 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2026 06:57:55 GMT</lastBuildDate>
     <atom:link href="https://myblog-umber-nine.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>远舟笔记1-别把Obsidian当成第二大脑</title>
@@ -109,6 +109,21 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 日常聊天、写文章、整理资料，它都干得很好。]]></description>
     </item>
     <item>
+      <title>远舟笔记14-使Mimo-code免费打造个人博客并发布</title>
+      <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B014-%E4%BD%BFMimo-code%E5%85%8D%E8%B4%B9%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E5%8F%91%E5%B8%83</link>
+      <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B014-%E4%BD%BFMimo-code%E5%85%8D%E8%B4%B9%E6%89%93%E9%80%A0%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E5%8F%91%E5%B8%83</guid>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[>远舟笔记·第14篇
+
+零代码、从 0 到 1，全程靠「对话」搞定一个 Next.js 技术博客，并部署到公网。
+
+
+
+最近体验了 MiMo Code —— 一个 AI 驱动的代码生成工具。和 Cursor、Copilot 不同，它更像一个「AI 建筑师」：你提需求，它直接生成完整项目，你不用碰一行代码。另外目前处于限时免费阶段，零成本就能上手尝试。
+
+正好我一直想搭个技术博客，存放自己写的 Ma]]></description>
+    </item>
+    <item>
       <title>远舟笔记2-把各平台的内容统一收进Obsidian：我的踩坑实战记录</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B02-%E6%8A%8A%E5%90%84%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%86%85%E5%AE%B9%E7%BB%9F%E4%B8%80%E6%94%B6%E8%BF%9BObsidian%EF%BC%9A%E6%88%91%E7%9A%84%E8%B8%A9%E5%9D%91%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B02-%E6%8A%8A%E5%90%84%E5%B9%B3%E5%8F%B0%E7%9A%84%E5%86%85%E5%AE%B9%E7%BB%9F%E4%B8%80%E6%94%B6%E8%BF%9BObsidian%EF%BC%9A%E6%88%91%E7%9A%84%E8%B8%A9%E5%9D%91%E5%AE%9E%E6%88%98%E8%AE%B0%E5%BD%95</guid>
@@ -175,14 +190,11 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 ]]></description>
     </item>
     <item>
-      <title>远舟笔记5-微信聊天里的文件，我用这个工具做了一次永久归档</title>
+      <title>刷到的文章再也找不到？那是因为你缺了这一步</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B05-%E5%88%B7%E5%88%B0%E7%9A%84%E6%96%87%E7%AB%A0%E5%86%8D%E4%B9%9F%E6%89%BE%E4%B8%8D%E5%88%B0%EF%BC%9F%E9%82%A3%E6%98%AF%E5%9B%A0%E4%B8%BA%E4%BD%A0%E7%BC%BA%E4%BA%86%E8%BF%99%E4%B8%80%E6%AD%A5</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B05-%E5%88%B7%E5%88%B0%E7%9A%84%E6%96%87%E7%AB%A0%E5%86%8D%E4%B9%9F%E6%89%BE%E4%B8%8D%E5%88%B0%EF%BC%9F%E9%82%A3%E6%98%AF%E5%9B%A0%E4%B8%BA%E4%BD%A0%E7%BC%BA%E4%BA%86%E8%BF%99%E4%B8%80%E6%AD%A5</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[> 远舟笔记 · 第5篇
-
-
-你有没有过这种经历：
+      <description><![CDATA[你有没有过这种经历：
 
 刷到一个好文章，收藏了。
 
@@ -201,7 +213,9 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 
 但现实是：**收藏≠记住**。
 
-你收藏了一百篇文章，和你真正消化了一百篇文章，是两]]></description>
+你收藏了一百篇文章，和你真正消化了一百篇文章，是两回事。
+
+今天分享一个方案，只]]></description>
     </item>
     <item>
       <title>远舟笔记6-腾讯给Windows用户配了6个AI牛马，我试了一天</title>
@@ -244,7 +258,7 @@ Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工
 我是远舟，一名专注于探索AI工]]></description>
     </item>
     <item>
-      <title>方式一：官方脚本安装（通用）</title>
+      <title>我在Mac上养了一个AI助手：认识我、读我的笔记，月费不到20块</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B08-%E6%88%91%E5%9C%A8Mac%E4%B8%8A%E5%85%BB%E4%BA%86%E4%B8%80%E4%B8%AAAI%E5%8A%A9%E6%89%8B%EF%BC%9A%E8%AE%A4%E8%AF%86%E6%88%91%E3%80%81%E8%AF%BB%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0%EF%BC%8C%E6%9C%88%E8%B4%B9%E4%B8%8D%E5%88%B020%E5%9D%97</link>
       <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B08-%E6%88%91%E5%9C%A8Mac%E4%B8%8A%E5%85%BB%E4%BA%86%E4%B8%80%E4%B8%AAAI%E5%8A%A9%E6%89%8B%EF%BC%9A%E8%AE%A4%E8%AF%86%E6%88%91%E3%80%81%E8%AF%BB%E6%88%91%E7%9A%84%E7%AC%94%E8%AE%B0%EF%BC%8C%E6%9C%88%E8%B4%B9%E4%B8%8D%E5%88%B020%E5%9D%97</guid>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>

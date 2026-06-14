@@ -102,8 +102,8 @@ export default function Navigation() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800">
-            <div className="flex flex-col gap-2">
+          <div className="md:hidden py-4 border-t border-gray-200 dark:border-gray-800 animate-slide-down">
+            <div className="flex flex-col gap-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}

@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import ReadingProgress from '@/components/ReadingProgress';
 import { getAllPosts, getPostBySlug, getAdjacentPosts } from '@/lib/blog';
 import { renderMarkdown } from '@/lib/markdown';
 import { getTagColor } from '@/lib/tag-colors';
@@ -48,21 +49,25 @@ export default async function BlogPostPage({
 
   return (
     <div className="min-h-screen flex flex-col">
+      <ReadingProgress />
       <Navigation />
       
       <main className="flex-1">
         <div className="max-w-4xl mx-auto px-4 py-12">
           <Link
             href="/blog"
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
+            className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline mb-8 transition-colors"
           >
-            ← 返回博客
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            返回博客
           </Link>
 
           <article className="animate-fade-in">
-            <header className="mb-8">
+            <header className="mb-8 rounded-xl bg-gray-50 dark:bg-gray-800/50 p-6 -mx-6">
               <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
-              <div className="flex flex-wrap items-center gap-2 mb-4">
+              <div className="flex flex-wrap items-center gap-2">
                 <time className="text-sm text-gray-500 dark:text-gray-400">{post.date}</time>
                 <span className="text-gray-400">·</span>
                 <span className="text-sm text-gray-500 dark:text-gray-400">{readingTime} 分钟阅读</span>

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { getPostsByTag, getAllTags } from '@/lib/blog';
+import { getTagColor } from '@/lib/tag-colors';
 
 export async function generateStaticParams() {
   const tags = getAllTags();
@@ -52,13 +53,10 @@ export default async function TagPage({
             共 {posts.length} 篇文章
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-4">
             {posts.map((post) => (
-              <article
-                key={post.slug}
-                className="border-b border-gray-200 dark:border-gray-800 pb-8 last:border-0"
-              >
-                <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group">
+              <article key={post.slug} className="blog-card">
+                <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group block">
                   <h2 className="text-2xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                     {post.title}
                   </h2>
@@ -74,11 +72,7 @@ export default async function TagPage({
                     <Link
                       key={t}
                       href={`/tags/${encodeURIComponent(t)}`}
-                      className={`px-2 py-1 text-xs rounded transition-colors ${
-                        t === decodedTag
-                          ? 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700'
-                      }`}
+                      className={`px-2 py-0.5 text-xs rounded-full hover:opacity-80 transition-opacity ${getTagColor(t)}`}
                     >
                       {t}
                     </Link>

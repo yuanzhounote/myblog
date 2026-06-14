@@ -51,13 +51,10 @@ export default function SearchBox({ posts }: { posts: SearchIndex[] }) {
         </div>
       )}
 
-      <div className="space-y-6">
+      <div className="space-y-4">
         {results.map((post) => (
-          <article
-            key={post.slug}
-            className="border-b border-gray-200 dark:border-gray-800 pb-6 last:border-0"
-          >
-            <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group">
+          <article key={post.slug} className="blog-card">
+            <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group block">
               <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {post.title}
               </h2>
