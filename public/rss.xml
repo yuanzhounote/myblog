@@ -5,8 +5,51 @@
     <link>https://myblog-umber-nine.vercel.app</link>
     <description>一个文案从业者的学习笔记，关于AI工具、知识管理与个人成长。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 15 Jun 2026 03:25:30 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 15 Jun 2026 07:34:10 GMT</lastBuildDate>
     <atom:link href="https://myblog-umber-nine.vercel.app/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>远舟笔记10-视频号的干货， 一招「点赞」变成「笔记」</title>
+      <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B010-%E8%A7%86%E9%A2%91%E5%8F%B7%E7%9A%84%E5%B9%B2%E8%B4%A7%EF%BC%8C%20%E4%B8%80%E6%8B%9B%E3%80%8C%E7%82%B9%E8%B5%9E%E3%80%8D%E5%8F%98%E6%88%90%E3%80%8C%E7%AC%94%E8%AE%B0%E3%80%8D</link>
+      <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B010-%E8%A7%86%E9%A2%91%E5%8F%B7%E7%9A%84%E5%B9%B2%E8%B4%A7%EF%BC%8C%20%E4%B8%80%E6%8B%9B%E3%80%8C%E7%82%B9%E8%B5%9E%E3%80%8D%E5%8F%98%E6%88%90%E3%80%8C%E7%AC%94%E8%AE%B0%E3%80%8D</guid>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[>远舟笔记·第10篇
+![](/images/file-20260606220304748.jpg)
+> 你有没有这样过：刷视频号刷到好内容，点了赞，心里说"等会儿看"——然后就再也没有然后了。
+>
+> 更扎心的是，好不容易有时间看完了，问自己"到底讲了什么"，说不清楚。
+>
+> 现在我找到一个方案，让视频号里的干货，变成 Obsidian 里的笔记。
+
+
+
+视频端一直是个空白。刷到好视频，只能点]]></description>
+    </item>
+    <item>
+      <title>远舟笔记15-Obsidian一键发布公众号：WeChat Publisher插件实测</title>
+      <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B015-Obsidian%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%E5%85%AC%E4%BC%97%E5%8F%B7%EF%BC%9AWeChat%20Publisher%E6%8F%92%E4%BB%B6%E5%AE%9E%E6%B5%8B</link>
+      <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B015-Obsidian%E4%B8%80%E9%94%AE%E5%8F%91%E5%B8%83%E5%85%AC%E4%BC%97%E5%8F%B7%EF%BC%9AWeChat%20Publisher%E6%8F%92%E4%BB%B6%E5%AE%9E%E6%B5%8B</guid>
+      <pubDate>Mon, 15 Jun 2026 00:00:00 GMT</pubDate>
+      <description><![CDATA[>远舟笔记·第15篇
+
+在 Obsidian 里写好文章，点一下按钮，直接飞到微信公众号草稿箱——不用打开浏览器、不用重新排版、不用一张张上传图片。
+
+这件事我以前想都不敢想。
+
+
+
+
+我以前试过好几种办法：
+
+**路径一：在线排版工具**
+
+把 Markdown 贴到在线排版网站，生成格式再贴回公众号。
+
+**路径二：公众号编辑器硬排**
+
+**路径三：ai 转 HTML**
+
+懂一点ai的可能]]></description>
+    </item>
     <item>
       <title>远舟笔记5-刷到的文章再也找不到？那是因为你缺了这一步</title>
       <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B05-%E5%88%B7%E5%88%B0%E7%9A%84%E6%96%87%E7%AB%A0%E5%86%8D%E4%B9%9F%E6%89%BE%E4%B8%8D%E5%88%B0%EF%BC%9F%E9%82%A3%E6%98%AF%E5%9B%A0%E4%B8%BA%E4%BD%A0%E7%BC%BA%E4%BA%86%E8%BF%99%E4%B8%80%E6%AD%A5</link>
@@ -95,23 +138,6 @@
 Notion在说，Obsidian在说，Logseq也在说。仿佛只要你用上这些工具，就能记住一切、管理一切、成为那个「不会被AI淘汰的人」。
 
 但坦白说，这套叙事]]></description>
-    </item>
-    <item>
-      <title>远舟笔记10-视频号的干货， 一招"点赞"变成"笔记"</title>
-      <link>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B010-%E8%A7%86%E9%A2%91%E5%8F%B7%E7%9A%84%E5%B9%B2%E8%B4%A7%EF%BC%8C%20%E4%B8%80%E6%8B%9B%22%E7%82%B9%E8%B5%9E%22%E5%8F%98%E6%88%90%22%E7%AC%94%E8%AE%B0%22</link>
-      <guid>https://myblog-umber-nine.vercel.app/blog/%E8%BF%9C%E8%88%9F%E7%AC%94%E8%AE%B010-%E8%A7%86%E9%A2%91%E5%8F%B7%E7%9A%84%E5%B9%B2%E8%B4%A7%EF%BC%8C%20%E4%B8%80%E6%8B%9B%22%E7%82%B9%E8%B5%9E%22%E5%8F%98%E6%88%90%22%E7%AC%94%E8%AE%B0%22</guid>
-      <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
-      <description><![CDATA[>远舟笔记·第10篇
-![](/images/file-20260606220304748.jpg)
-> 你有没有这样过：刷视频号刷到好内容，点了赞，心里说"等会儿看"——然后就再也没有然后了。
->
-> 更扎心的是，好不容易有时间看完了，问自己"到底讲了什么"，说不清楚。
->
-> 现在我找到一个方案，让视频号里的干货，变成 Obsidian 里的笔记。
-
-
-
-视频端一直是个空白。刷到好视频，只能点]]></description>
     </item>
     <item>
       <title>远舟笔记11-公众号配图不用愁了：我试了两个AI画图工具，一个就在微信里</title>
