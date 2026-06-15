@@ -27,7 +27,7 @@ export default function SearchBox({ posts }: { posts: SearchIndex[] }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="输入关键词搜索文章..."
-          className="w-full px-4 py-3 pl-12 text-lg border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          className="w-full px-4 py-3 pl-12 text-lg border border-gray-200 rounded-xl bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
           autoFocus
         />
         <svg
@@ -46,7 +46,7 @@ export default function SearchBox({ posts }: { posts: SearchIndex[] }) {
       </div>
 
       {query.trim() && (
-        <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+        <div className="text-sm text-gray-500 mb-4">
           找到 {results.length} 篇文章
         </div>
       )}
@@ -55,14 +55,14 @@ export default function SearchBox({ posts }: { posts: SearchIndex[] }) {
         {results.map((post) => (
           <article key={post.slug} className="blog-card">
             <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group block">
-              <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+              <h2 className="text-xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                 {post.title}
               </h2>
             </Link>
-            <div className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+            <div className="text-sm text-gray-500 mb-2">
               {post.date}
             </div>
-            <p className="text-gray-600 dark:text-gray-300 mb-3 line-clamp-2">
+            <p className="text-gray-600 mb-3 line-clamp-2">
               {post.excerpt}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -70,7 +70,7 @@ export default function SearchBox({ posts }: { posts: SearchIndex[] }) {
                 <Link
                   key={tag}
                   href={`/tags/${encodeURIComponent(tag)}`}
-                  className="px-2 py-1 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded hover:bg-gray-200 transition-colors"
                 >
                   {tag}
                 </Link>
@@ -82,10 +82,10 @@ export default function SearchBox({ posts }: { posts: SearchIndex[] }) {
 
       {query.trim() && results.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500 dark:text-gray-400 text-lg">
+          <p className="text-gray-500 text-lg">
             没有找到相关文章
           </p>
-          <p className="text-gray-400 dark:text-gray-500 text-sm mt-2">
+          <p className="text-gray-400 text-sm mt-2">
             试试其他关键词？
           </p>
         </div>

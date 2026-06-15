@@ -43,13 +43,13 @@ export default async function TagPage({
         <div className="max-w-4xl mx-auto px-4 py-12">
           <Link
             href="/tags"
-            className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8"
+            className="inline-flex items-center text-blue-600 hover:underline mb-8"
           >
             ← 返回标签
           </Link>
 
           <h1 className="text-4xl font-bold mb-2">{decodedTag}</h1>
-          <p className="text-gray-500 dark:text-gray-400 mb-8">
+          <p className="text-gray-500 mb-8">
             共 {posts.length} 篇文章
           </p>
 
@@ -57,14 +57,14 @@ export default async function TagPage({
             {posts.map((post) => (
               <article key={post.slug} className="blog-card">
                 <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group block">
-                  <h2 className="text-2xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h2 className="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                     {post.title}
                   </h2>
                 </Link>
-                <div className="text-sm text-gray-500 dark:text-gray-400 mb-3">
+                <div className="text-sm text-gray-500 mb-3">
                   {post.date}
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 mb-3">
+                <p className="text-gray-600 mb-3">
                   {post.excerpt}
                 </p>
                 <div className="flex flex-wrap gap-2">

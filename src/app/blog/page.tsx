@@ -43,12 +43,12 @@ export default function BlogPage() {
             {posts.map((post) => (
               <article key={post.slug} className="blog-card">
                 <Link href={`/blog/${encodeURIComponent(post.slug)}`} className="group block">
-                  <h2 className="text-2xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <h2 className="text-2xl font-semibold mb-2 group-hover:text-blue-600 transition-colors">
                     {post.title}
                   </h2>
                 </Link>
                 <div className="flex flex-wrap items-center gap-2 mb-3">
-                  <span className="text-sm text-gray-500 dark:text-gray-400">
+                  <span className="text-sm text-gray-500">
                     {post.date}
                   </span>
                   {post.tags.map((tag) => (
@@ -61,7 +61,7 @@ export default function BlogPage() {
                     </Link>
                   ))}
                 </div>
-                <p className="text-gray-600 dark:text-gray-300">
+                <p className="text-gray-600">
                   {post.excerpt}
                 </p>
               </article>

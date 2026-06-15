@@ -56,7 +56,7 @@ export default async function BlogPostPage({
         <div className="max-w-4xl mx-auto px-4 py-12">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline mb-8 transition-colors"
+            className="inline-flex items-center gap-1 text-blue-600 hover:underline mb-8 transition-colors"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -65,12 +65,12 @@ export default async function BlogPostPage({
           </Link>
 
           <article className="animate-fade-in">
-            <header className="mb-8 rounded-xl bg-gray-50 dark:bg-gray-800/50 p-6 -mx-6">
+            <header className="mb-8 rounded-xl bg-gray-50 p-6 -mx-6">
               <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
               <div className="flex flex-wrap items-center gap-2">
-                <time className="text-sm text-gray-500 dark:text-gray-400">{post.date}</time>
+                <time className="text-sm text-gray-500">{post.date}</time>
                 <span className="text-gray-400">·</span>
-                <span className="text-sm text-gray-500 dark:text-gray-400">{readingTime} 分钟阅读</span>
+                <span className="text-sm text-gray-500">{readingTime} 分钟阅读</span>
                 {post.tags.length > 0 && <span className="text-gray-400">·</span>}
                 {post.tags.map((tag) => (
                   <Link
@@ -91,17 +91,17 @@ export default async function BlogPostPage({
           </article>
 
           {/* 上一篇/下一篇导航 */}
-          <nav className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+          <nav className="mt-12 pt-8 border-t border-gray-200">
             <div className="flex justify-between gap-4">
               {prev ? (
                 <Link
                   href={`/blog/${encodeURIComponent(prev.slug)}`}
                   className="flex-1 group"
                 >
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                  <div className="text-sm text-gray-500 mb-1">
                     ← 上一篇
                   </div>
-                  <div className="text-lg font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <div className="text-lg font-medium group-hover:text-blue-600 transition-colors">
                     {prev.title}
                   </div>
                 </Link>
@@ -114,10 +114,10 @@ export default async function BlogPostPage({
                   href={`/blog/${encodeURIComponent(next.slug)}`}
                   className="flex-1 text-right group"
                 >
-                  <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
+                  <div className="text-sm text-gray-500 mb-1">
                     下一篇 →
                   </div>
-                  <div className="text-lg font-medium group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  <div className="text-lg font-medium group-hover:text-blue-600 transition-colors">
                     {next.title}
                   </div>
                 </Link>

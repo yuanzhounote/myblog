@@ -37,7 +37,7 @@ export default function TagsPage() {
           </div>
 
           {tags.length === 0 && (
-            <p className="text-gray-500 dark:text-gray-400">
+            <p className="text-gray-500">
               暂无标签
             </p>
           )}

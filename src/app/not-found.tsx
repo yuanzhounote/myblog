@@ -9,11 +9,11 @@ export default function NotFound() {
       
       <main className="flex-1 flex items-center justify-center">
         <div className="text-center px-4">
-          <h1 className="text-6xl font-bold text-gray-300 dark:text-gray-700 mb-4">
+          <h1 className="text-6xl font-bold text-gray-300 mb-4">
             404
           </h1>
           <h2 className="text-2xl font-semibold mb-4">页面未找到</h2>
-          <p className="text-gray-500 dark:text-gray-400 mb-8">
+          <p className="text-gray-500 mb-8">
             你访问的页面不存在或已被移除
           </p>
           <Link

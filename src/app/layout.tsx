@@ -15,11 +15,6 @@ export default function RootLayout({
   return (
     <html lang="zh-CN" className="h-full" suppressHydrationWarning>
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark')}catch(e){}})()`,
-          }}
-        />
         <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" />
         <link
           rel="stylesheet"
@@ -28,7 +23,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
-      <body className="min-h-full flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+      <body className="min-h-full flex flex-col bg-white text-gray-900 font-sans">
         {children}
       </body>
     </html>
