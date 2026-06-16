@@ -43,7 +43,6 @@ function rehypeRewriteImages() {
         }
         node.properties.loading = 'lazy';
         node.properties.decoding = 'async';
-        node.properties.className = 'lazy-image';
       }
       if (node.children) {
         node.children.forEach(visit);
@@ -74,16 +73,6 @@ export async function renderMarkdown(content: string): Promise<string> {
   let html = String(result);
   if (html.includes('<pre')) {
     html += COPY_SCRIPT;
-  }
-  if (html.includes('lazy-image')) {
-    html += `<script>
-(function(){
-  document.querySelectorAll('.lazy-image').forEach(function(img){
-    if(img.complete){img.classList.add('loaded');}
-    else{img.onload=function(){img.classList.add('loaded');};}
-  });
-})();
-</script>`;
   }
   return html;
 }

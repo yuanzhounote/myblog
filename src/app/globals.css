@@ -86,16 +86,6 @@ body {
   max-width: 100%;
 }
 
-.lazy-image {
-  filter: blur(20px);
-  transition: filter 0.3s ease;
-}
-
-.lazy-image[complete],
-.lazy-image.loaded {
-  filter: blur(0);
-}
-
 .prose table {
   width: 100%;
   border-collapse: collapse;
