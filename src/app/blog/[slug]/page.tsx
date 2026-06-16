@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ReadingProgress from '@/components/ReadingProgress';
-import ArticleTOC from '@/components/ArticleTOC';
 import { getAllPosts, getPostBySlug, getAdjacentPosts } from '@/lib/blog';
 import { renderMarkdown } from '@/lib/markdown';
 import { getTagColor } from '@/lib/tag-colors';
@@ -96,8 +95,6 @@ export default async function BlogPostPage({
                   ))}
                 </div>
               </header>
-
-              <ArticleTOC headings={headings} />
 
               <div
                 className="prose max-w-none"
