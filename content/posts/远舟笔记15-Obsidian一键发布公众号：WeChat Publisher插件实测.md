@@ -1,10 +1,11 @@
 ---
+title: Obsidian一键发布公众号：WeChat Publisher插件实测
 tags:
   - Obsidian
   - 微信公众号
   - 插件推荐
   - 写作工作流
-  - AI写作
+line: 🔵 工具实操线
 ---
 
 >远舟笔记·第15篇

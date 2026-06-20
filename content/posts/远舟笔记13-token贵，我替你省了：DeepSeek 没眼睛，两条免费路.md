@@ -1,10 +1,12 @@
 ---
+title: token贵，我替你省了：DeepSeek 没眼睛，两条免费路
 tags:
   - DeepSeek
   - 视觉模型
   - 免费方案
   - OCR
   - 讯飞星辰
+line: 🔵 工具实操线
 ---
 
 >远舟笔记·第13篇

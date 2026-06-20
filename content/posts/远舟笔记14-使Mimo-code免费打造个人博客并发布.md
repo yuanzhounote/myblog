@@ -1,10 +1,12 @@
 ---
+title: 使MiMo Code免费打造个人博客并发布
 tags:
   - MiMoCode
   - Nextjs
   - Vercel
   - 博客搭建
   - AI编程
+line: 🔵 工具实操线
 ---
 
 >远舟笔记·第14篇
