@@ -40,24 +40,3 @@ const posts = getPosts();
 fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), generateSitemap(posts));
 fs.writeFileSync(path.join(publicDir, 'rss.xml'), generateRSS(posts));
 console.log(`Generated sitemap.xml and rss.xml (${posts.length} posts)`);
-
-// 复制 content/assets 到 public/content/assets
-const assetsDir = path.join(process.cwd(), 'content/assets');
-const publicAssetsDir = path.join(publicDir, 'content/assets');
-
-if (fs.existsSync(assetsDir)) {
-  function copyDirSync(src, dest) {
-    if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
-    fs.readdirSync(src).forEach(file => {
-      const srcPath = path.join(src, file);
-      const destPath = path.join(dest, file);
-      if (fs.statSync(srcPath).isDirectory()) {
-        copyDirSync(srcPath, destPath);
-      } else {
-        fs.copyFileSync(srcPath, destPath);
-      }
-    });
-  }
-  copyDirSync(assetsDir, publicAssetsDir);
-  console.log('Copied content/assets to public/content/assets');
-}
