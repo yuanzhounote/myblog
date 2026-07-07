@@ -33,14 +33,12 @@ const COPY_SCRIPT = `
 })();
 </script>`;
 
-function rehypeRewriteImages() {
+// 为所有图片补充原生懒加载与异步解码（不再重写图片路径：
+// 全站图片均使用 /images/ 绝对路径，/content/assets 重写历史逻辑已废弃）
+function rehypeImgAttributes() {
   return (tree: any) => {
     const visit = (node: any) => {
       if (node.type === 'element' && node.tagName === 'img') {
-        const src = node.properties?.src;
-        if (src && !src.startsWith('http') && !src.startsWith('/')) {
-          node.properties.src = `/content/assets/${src}`;
-        }
         node.properties.loading = 'lazy';
         node.properties.decoding = 'async';
       }
@@ -106,7 +104,7 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(rehypeAutolinkHeadings, {
       behavior: 'wrap',
     })
-    .use(rehypeRewriteImages)
+    .use(rehypeImgAttributes)
     .use(rehypeStringify)
     .process(content);
 
