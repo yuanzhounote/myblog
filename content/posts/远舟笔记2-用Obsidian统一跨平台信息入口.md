@@ -1,4 +1,5 @@
 ---
+date: "2026-06-02"
 title: 把各平台的内容统一收进Obsidian
 tags:
   - Obsidian

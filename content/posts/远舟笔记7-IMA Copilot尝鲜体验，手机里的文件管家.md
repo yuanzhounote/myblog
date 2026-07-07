@@ -1,4 +1,5 @@
 ---
+date: "2026-06-07"
 title: 我让IMA Copilot读了我的6篇笔记，它给我交了一份工作流体检报告
 tags:
   - IMA

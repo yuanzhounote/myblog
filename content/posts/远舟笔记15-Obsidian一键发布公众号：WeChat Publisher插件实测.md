@@ -1,4 +1,5 @@
 ---
+date: "2026-06-15"
 title: Obsidian一键发布公众号：WeChat Publisher插件实测
 tags:
   - Obsidian

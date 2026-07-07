@@ -1,4 +1,5 @@
 ---
+date: "2026-06-04"
 title: 从收藏夹吃灰到AI自动编译
 tags:
   - Obsidian

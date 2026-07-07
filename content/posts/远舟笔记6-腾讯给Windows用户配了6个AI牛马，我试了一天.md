@@ -1,4 +1,5 @@
 ---
+date: "2026-06-06"
 title: 腾讯给Windows用户配了6个AI牛马，我试了一天
 tags:
   - AI工具

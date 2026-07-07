@@ -1,4 +1,5 @@
 ---
+date: "2026-06-13"
 title: token贵，我替你省了：DeepSeek 没眼睛，两条免费路
 tags:
   - DeepSeek

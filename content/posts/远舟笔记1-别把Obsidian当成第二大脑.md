@@ -1,4 +1,5 @@
 ---
+date: "2026-06-01"
 title: 别把Obsidian当成第二大脑
 tags:
   - Obsidian
