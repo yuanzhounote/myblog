@@ -196,25 +196,6 @@ body {
   margin: 0 auto;
 }
 
-/* 标题锚点 */
-.heading-anchor {
-  color: var(--muted);
-  text-decoration: none;
-  opacity: 0;
-  margin-left: 0.5rem;
-  transition: opacity 0.2s;
-}
-
-h1:hover .heading-anchor,
-h2:hover .heading-anchor,
-h3:hover .heading-anchor {
-  opacity: 1;
-}
-
-.heading-anchor:hover {
-  color: var(--primary);
-}
-
 /* 任务列表 */
 .prose .task-list-item {
   list-style: none;

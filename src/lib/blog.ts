@@ -14,7 +14,7 @@ export interface BlogPost {
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
 
-function calculateReadingTime(content: string): number {
+export function calculateReadingTime(content: string): number {
   const wordsPerMinute = 400;
   // 中文按字符数估算，英文按空格分词
   const chineseChars = (content.match(/[\u4e00-\u9fff]/g) || []).length;

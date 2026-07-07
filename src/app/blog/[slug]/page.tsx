@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import ReadingProgress from '@/components/ReadingProgress';
-import { getAllPosts, getPostBySlug, getAdjacentPosts } from '@/lib/blog';
+import { getAllPosts, getPostBySlug, getAdjacentPosts, calculateReadingTime } from '@/lib/blog';
 import { renderMarkdown } from '@/lib/markdown';
 import { getTagColor } from '@/lib/tag-colors';
 import Mermaid from '@/components/Mermaid';
@@ -45,9 +45,7 @@ export default async function BlogPostPage({
   const { prev, next } = getAdjacentPosts(slug);
   const contentHtml = await renderMarkdown(post.content);
   const hasMermaid = contentHtml.includes('class="mermaid"');
-  const chineseChars = (post.content.match(/[\u4e00-\u9fff]/g) || []).length;
-  const englishWords = post.content.replace(/[\u4e00-\u9fff]/g, '').trim().split(/\s+/).filter(Boolean).length;
-  const readingTime = Math.max(1, Math.ceil((chineseChars + englishWords) / 400));
+  const readingTime = calculateReadingTime(post.content);
 
   const headings: { id: string; text: string; level: number }[] = [];
   const headingRegex = /<h([23])\s+id="([^"]+)"[^>]*>(.*?)<\/h[23]>/g;

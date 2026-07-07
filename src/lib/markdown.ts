@@ -33,12 +33,22 @@ const COPY_SCRIPT = `
 })();
 </script>`;
 
+// hast 节点最小类型（仅为消除 any，覆盖本文件用到的字段）
+interface HastNode {
+  type: string;
+  tagName?: string;
+  value?: string;
+  properties?: Record<string, unknown>;
+  children?: HastNode[];
+}
+
 // 为所有图片补充原生懒加载与异步解码（不再重写图片路径：
 // 全站图片均使用 /images/ 绝对路径，/content/assets 重写历史逻辑已废弃）
 function rehypeImgAttributes() {
-  return (tree: any) => {
-    const visit = (node: any) => {
+  return (tree: HastNode) => {
+    const visit = (node: HastNode) => {
       if (node.type === 'element' && node.tagName === 'img') {
+        node.properties = node.properties || {};
         node.properties.loading = 'lazy';
         node.properties.decoding = 'async';
       }
@@ -53,24 +63,25 @@ function rehypeImgAttributes() {
 // 将 ```mermaid 代码块转换为 <div class="mermaid"> 原始图表源码 </div>，
 // 供客户端 mermaid.run() 渲染。保留纯文本内容，由 rehype-stringify 负责转义。
 function rehypeMermaid() {
-  const collectText = (node: any): string => {
-    if (node.type === 'text') return node.value;
+  const collectText = (node: HastNode): string => {
+    if (node.type === 'text') return node.value ?? '';
     if (!node.children) return '';
     return node.children.map(collectText).join('');
   };
 
-  const visit = (node: any, parent: any, index: number) => {
+  const visit = (node: HastNode, parent: HastNode | null, index: number) => {
     if (
       node.type === 'element' &&
       node.tagName === 'pre' &&
       parent &&
       Array.isArray(parent.children)
     ) {
-      const code = node.children.find(
-        (c: any) => c.type === 'element' && c.tagName === 'code'
+      const code = node.children?.find(
+        (c) => c.type === 'element' && c.tagName === 'code'
       );
-      const className: string[] = code?.properties?.className || [];
-      if (className.includes('language-mermaid')) {
+      const className: string[] =
+        (code?.properties?.className as string[] | undefined) || [];
+      if (code && className.includes('language-mermaid')) {
         const source = collectText(code);
         parent.children[index] = {
           type: 'element',
@@ -82,11 +93,11 @@ function rehypeMermaid() {
       }
     }
     if (node.children) {
-      node.children.forEach((child: any, i: number) => visit(child, node, i));
+      node.children.forEach((child, i) => visit(child, node, i));
     }
   };
 
-  return (tree: any) => visit(tree, null, 0);
+  return (tree: HastNode) => visit(tree, null, 0);
 }
 
 export async function renderMarkdown(content: string): Promise<string> {
