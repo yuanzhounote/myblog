@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Navigation from '@/components/Navigation';
@@ -15,18 +16,39 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  
+
   if (!post) {
     return { title: '文章未找到' };
   }
 
+  const url = `/blog/${encodeURIComponent(post.slug)}`;
+  const description = post.description || post.excerpt;
+
   return {
-    title: `${post.title} | 远舟笔记`,
-    description: post.description || post.excerpt,
+    title: post.title,
+    description,
     keywords: post.tags,
+    authors: [{ name: '远舟' }],
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      locale: 'zh_CN',
+      url,
+      siteName: '远舟笔记',
+      title: post.title,
+      description,
+      publishedTime: post.date,
+      authors: ['远舟'],
+      tags: post.tags,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description,
+    },
   };
 }
 
