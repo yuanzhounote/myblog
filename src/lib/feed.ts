@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { getAllPosts } from './blog';
 
-const BASE_URL = 'https://myblog-umber-nine.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://yuanzhounote.com';
 
 export function generateSitemap(): string {
   const posts = getAllPosts();

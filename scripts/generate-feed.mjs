@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 
 const postsDir = path.join(process.cwd(), 'content/posts');
 const publicDir = path.join(process.cwd(), 'public');
-const BASE_URL = 'https://myblog-umber-nine.vercel.app';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://yuanzhounote.com';
 
 function getPosts() {
   if (!fs.existsSync(postsDir)) return [];
