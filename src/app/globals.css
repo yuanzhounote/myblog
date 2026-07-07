@@ -179,6 +179,23 @@ body {
   overflow-x: auto;
 }
 
+/* Mermaid 图表容器 */
+.prose .mermaid {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background: #f9fafb;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  text-align: center;
+  overflow-x: auto;
+}
+
+.prose .mermaid svg {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
 /* 标题锚点 */
 .heading-anchor {
   color: var(--muted);

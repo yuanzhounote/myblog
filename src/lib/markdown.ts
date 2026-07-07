@@ -52,6 +52,45 @@ function rehypeRewriteImages() {
   };
 }
 
+// 将 ```mermaid 代码块转换为 <div class="mermaid"> 原始图表源码 </div>，
+// 供客户端 mermaid.run() 渲染。保留纯文本内容，由 rehype-stringify 负责转义。
+function rehypeMermaid() {
+  const collectText = (node: any): string => {
+    if (node.type === 'text') return node.value;
+    if (!node.children) return '';
+    return node.children.map(collectText).join('');
+  };
+
+  const visit = (node: any, parent: any, index: number) => {
+    if (
+      node.type === 'element' &&
+      node.tagName === 'pre' &&
+      parent &&
+      Array.isArray(parent.children)
+    ) {
+      const code = node.children.find(
+        (c: any) => c.type === 'element' && c.tagName === 'code'
+      );
+      const className: string[] = code?.properties?.className || [];
+      if (className.includes('language-mermaid')) {
+        const source = collectText(code);
+        parent.children[index] = {
+          type: 'element',
+          tagName: 'div',
+          properties: { className: ['mermaid'] },
+          children: [{ type: 'text', value: source }],
+        };
+        return;
+      }
+    }
+    if (node.children) {
+      node.children.forEach((child: any, i: number) => visit(child, node, i));
+    }
+  };
+
+  return (tree: any) => visit(tree, null, 0);
+}
+
 export async function renderMarkdown(content: string): Promise<string> {
   const result = await unified()
     .use(remarkParse)
@@ -61,6 +100,7 @@ export async function renderMarkdown(content: string): Promise<string> {
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
     .use(rehypeHighlight)
+    .use(rehypeMermaid)
     .use(rehypeKatex)
     .use(rehypeSlug)
     .use(rehypeAutolinkHeadings, {

@@ -6,6 +6,7 @@ import ReadingProgress from '@/components/ReadingProgress';
 import { getAllPosts, getPostBySlug, getAdjacentPosts } from '@/lib/blog';
 import { renderMarkdown } from '@/lib/markdown';
 import { getTagColor } from '@/lib/tag-colors';
+import Mermaid from '@/components/Mermaid';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -43,6 +44,7 @@ export default async function BlogPostPage({
 
   const { prev, next } = getAdjacentPosts(slug);
   const contentHtml = await renderMarkdown(post.content);
+  const hasMermaid = contentHtml.includes('class="mermaid"');
   const chineseChars = (post.content.match(/[\u4e00-\u9fff]/g) || []).length;
   const englishWords = post.content.replace(/[\u4e00-\u9fff]/g, '').trim().split(/\s+/).filter(Boolean).length;
   const readingTime = Math.max(1, Math.ceil((chineseChars + englishWords) / 400));
@@ -100,6 +102,7 @@ export default async function BlogPostPage({
                 className="prose max-w-none"
                 dangerouslySetInnerHTML={{ __html: contentHtml }}
               />
+              {hasMermaid && <Mermaid />}
             </article>
 
             <aside className="hidden lg:block w-56 flex-shrink-0">
