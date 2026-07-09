@@ -22,6 +22,20 @@ export function calculateReadingTime(content: string): number {
   return Math.max(1, Math.ceil((chineseChars + englishWords) / wordsPerMinute));
 }
 
+// gray-matter/js-yaml 会把裸写的 `date: 2026-06-26` 解析成 Date 对象，
+// 直接渲染到 React 会抛 "Objects are not valid as a React child"。
+// 这里统一转成 YYYY-MM-DD 字符串。
+function normalizeDate(value: unknown): string {
+  if (value instanceof Date) {
+    // js-yaml 把裸日期解析为 UTC 零点，toISOString 再截日期即可还原
+    return value.toISOString().split('T')[0];
+  }
+  if (value === undefined || value === null || value === '') {
+    return '';
+  }
+  return String(value);
+}
+
 function extractFirstHeading(content: string): string | null {
   // 先去掉代码块内容，避免代码注释被误判为标题
   const withoutCode = content.replace(/```[\s\S]*?```/g, '');
@@ -62,7 +76,7 @@ export function getAllPosts(): BlogPost[] {
       
       const title = data.title || extractFirstHeading(content) || slug;
       // 优先 frontmatter 的 date，否则用文件修改时间
-      let date = data.date;
+      let date = normalizeDate(data.date);
       if (!date) {
         const stats = fs.statSync(fullPath);
         date = stats.mtime.toISOString().split('T')[0];
@@ -100,7 +114,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   const { data, content } = matter(fileContents);
   
   const title = data.title || extractFirstHeading(content) || decodedSlug;
-  let date = data.date;
+  let date = normalizeDate(data.date);
   if (!date) {
     const stats = fs.statSync(fullPath);
     date = stats.mtime.toISOString().split('T')[0];

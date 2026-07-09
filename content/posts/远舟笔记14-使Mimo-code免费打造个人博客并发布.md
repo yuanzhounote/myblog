@@ -1,5 +1,4 @@
 ---
-date: "2026-06-14"
 title: 使MiMo Code免费打造个人博客并发布
 tags:
   - MiMoCode
