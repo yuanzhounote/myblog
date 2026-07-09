@@ -2,7 +2,7 @@
 
 一个文案从业者的学习笔记博客，关于 AI 工具、知识管理与个人成长。
 
-博客地址：https://myblog-xxxxx.vercel.app（由 Vercel 部署）
+博客地址：www.yuanzhounote.com（由 Vercel 部署）
 
 ---
 
