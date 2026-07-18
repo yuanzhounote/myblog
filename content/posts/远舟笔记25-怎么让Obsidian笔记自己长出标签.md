@@ -4,7 +4,7 @@ line: 🔵 工具实操线
 # Loop 三要素 · 拆分存放：trace 写在每篇源文（必填）；matrix/feedback 来自「阅读数据/」周导出→「loop/matrix/」「loop/feedback/」AI分析，不挂单篇
 trace: "合并 #25(理念/问题篇) 与 #26(落地/skill篇) 为单篇常青稿。真实执行：库 1176 篇 .md，仅 22 篇(1.9%)带标签、1154 裸奔、47 原始唯一标签(碎片标签)、0 污染；全量回标后 441；压缩到 46(↓89.6%)；现状复扫 1147/1146/3882/0。补回两段：压缩(441→46)、增量自动化(每周日扫 mtime>last_run 新笔记)。统一 9 步流程。无备份口径(幂等可重跑)。定稿按声音基线改松弛随笔风：软化CTA、去「粉丝四步」教程框，保留四点修正。"
 review: false  # 自动化审阅标记：每周日扫完本篇 trace、把总结沉淀到 loop/trace/ 后置 true
-cta: 评论区回复「标签自动化」领取 Obsidian 标签自动化 skill 包  # 默认无；有可分享资料才写，正文不放硬 CTA
+cta: 前往个人博客 yuanzhounote.com 阅读原文，文末可直接下载 Obsidian 标签自动化 skill 包  # 默认无；有可分享资料才写，正文不放硬 CTA
 tags:
   - Obsidian
   - 知识管理
@@ -13,6 +13,9 @@ tags:
   - 文章
   - LoopEngineering
   - 待整理
+attachments:
+  - file: "#25 obsidian标签skill.md"
+    label: Obsidian 标签自动化 skill 包
 ---
 >远舟笔记·第25篇
 
