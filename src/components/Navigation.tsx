@@ -11,6 +11,7 @@ export default function Navigation() {
   const navItems = [
     { href: '/', label: '首页' },
     { href: '/blog', label: '博客' },
+    { href: '/downloads', label: '资料下载' },
     { href: '/tags', label: '标签' },
     { href: '/search', label: '搜索' },
     { href: '/about', label: '关于' },

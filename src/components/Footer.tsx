@@ -25,6 +25,12 @@ export default function Footer() {
               标签
             </Link>
             <Link
+              href="/downloads"
+              className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            >
+              资料下载
+            </Link>
+            <Link
               href="/about"
               className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
             >

@@ -8,6 +8,7 @@ import { getAllPosts, getPostBySlug, getAdjacentPosts, calculateReadingTime } fr
 import { renderMarkdown } from '@/lib/markdown';
 import { getTagColor } from '@/lib/tag-colors';
 import Mermaid from '@/components/Mermaid';
+import AttachmentList from '@/components/AttachmentList';
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
@@ -146,6 +147,11 @@ export default async function BlogPostPage({
               </nav>
             </aside>
           </div>
+
+          {/* 附件下载 */}
+          {(post.attachments && post.attachments.length > 0) && (
+            <AttachmentList attachments={post.attachments} />
+          )}
 
           {/* 上一篇/下一篇导航 */}
           <nav className="mt-12 pt-8 border-t border-gray-200">

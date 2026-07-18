@@ -2,6 +2,13 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
+export interface Attachment {
+  /** 文件名，对应 public/attachments 下的文件，如 "note.md" */
+  file: string;
+  /** 展示名称，缺省时取文件名（去掉 .md 后缀） */
+  label: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -10,6 +17,39 @@ export interface BlogPost {
   content: string;
   description?: string;
   tags: string[];
+  attachments?: Attachment[];
+}
+
+/**
+ * 解析 frontmatter 里的 attachments 字段。
+ * 支持两种写法：
+ *   attachments: ["note.md"]                       → 字符串数组
+ *   attachments:                                  → 对象数组
+ *     - file: note.md
+ *       label: 我的笔记
+ */
+function parseAttachments(raw: unknown): Attachment[] {
+  if (!Array.isArray(raw)) return [];
+
+  return raw
+    .map((item): Attachment | null => {
+      if (typeof item === 'string' && item.trim()) {
+        const file = item.trim();
+        return { file, label: file.replace(/\.md$/i, '') };
+      }
+      if (item && typeof item === 'object') {
+        const obj = item as Record<string, unknown>;
+        const file = typeof obj.file === 'string' ? obj.file.trim() : '';
+        if (!file) return null;
+        const label =
+          typeof obj.label === 'string' && obj.label.trim()
+            ? obj.label.trim()
+            : file.replace(/\.md$/i, '');
+        return { file, label };
+      }
+      return null;
+    })
+    .filter((a): a is Attachment => a !== null);
 }
 
 const postsDirectory = path.join(process.cwd(), 'content/posts');
@@ -84,6 +124,7 @@ export function getAllPosts(): BlogPost[] {
       const tags = data.tags || [];
       const description = data.description || '';
       const excerpt = data.description || extractExcerpt(content);
+      const attachments = parseAttachments(data.attachments);
       
       return {
         slug,
@@ -93,6 +134,7 @@ export function getAllPosts(): BlogPost[] {
         description,
         content,
         tags,
+        attachments,
       };
     });
     
@@ -122,6 +164,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
   const tags = data.tags || [];
   const description = data.description || '';
   const excerpt = data.description || extractExcerpt(content);
+  const attachments = parseAttachments(data.attachments);
   
   return {
     slug: decodedSlug,
@@ -131,6 +174,7 @@ export function getPostBySlug(slug: string): BlogPost | null {
     description,
     content,
     tags,
+    attachments,
   };
 }
 
@@ -164,4 +208,23 @@ export function getAdjacentPosts(slug: string): { prev: BlogPost | null; next: B
     prev: index < posts.length - 1 ? posts[index + 1] : null,
     next: index > 0 ? posts[index - 1] : null,
   };
+}
+
+export interface AttachmentGroup {
+  slug: string;
+  title: string;
+  date: string;
+  attachments: Attachment[];
+}
+
+/** 聚合所有带附件的文章，供「资料下载」页使用 */
+export function getAllAttachments(): AttachmentGroup[] {
+  return getAllPosts()
+    .filter((post) => post.attachments && post.attachments.length > 0)
+    .map((post) => ({
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+      attachments: post.attachments!,
+    }));
 }
