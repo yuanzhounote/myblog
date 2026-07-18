@@ -83,6 +83,16 @@ function extractFirstHeading(content: string): string | null {
   return match ? match[1].trim() : null;
 }
 
+/**
+ * 从 slug（文件名）中提取文章编号，用于排序。
+ * 例如 "远舟笔记25-怎么让Obsidian..." → 25。
+ * 取文件名中第一组连续数字；无数字则记为 0（排在最前/最后由比较方向决定）。
+ */
+function extractPostNumber(slug: string): number {
+  const m = slug.match(/(\d+)/);
+  return m ? parseInt(m[1], 10) : 0;
+}
+
 function extractExcerpt(content: string): string {
   const cleaned = content
     .replace(/^#{1,6}\s+.+$/gm, '')        // 去除标题
@@ -138,8 +148,12 @@ export function getAllPosts(): BlogPost[] {
       };
     });
     
-  return posts.sort((a, b) => 
-    new Date(b.date).getTime() - new Date(a.date).getTime()
+  // 按文章编号降序排列（25 → 1）。
+  // 说明：原先按 frontmatter 的 date 降序，但多数文章未写 date，
+  // Vercel 构建时文件修改时间相同导致排序退化成文件名字典序。
+  // 改用文件名中的「远舟笔记N」编号作为稳定排序键， newest-first 且不受 mtime 影响。
+  return posts.sort((a, b) =>
+    extractPostNumber(b.slug) - extractPostNumber(a.slug)
   );
 }
 
