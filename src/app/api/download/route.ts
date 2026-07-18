@@ -59,10 +59,8 @@ export async function GET(request: NextRequest) {
     // 优先本地读取；Vercel 等 serverless 环境下函数进程可能访问不到
     // public 文件系统，此时 fallback 到同源静态资源 URL 读取。
     let data: Buffer;
-    let src = 'unknown';
     if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
       data = fs.readFileSync(fullPath);
-      src = 'fs';
     } else {
       try {
         const origin = request.nextUrl.origin;
@@ -72,7 +70,6 @@ export async function GET(request: NextRequest) {
           return new NextResponse('文件不存在(静态)', { status: 404 });
         }
         data = Buffer.from(await fileRes.arrayBuffer());
-        src = 'fetch';
       } catch (e) {
         return new NextResponse(
           '文件读取失败: ' + (e instanceof Error ? e.message : String(e)),
@@ -98,8 +95,6 @@ export async function GET(request: NextRequest) {
         'Content-Disposition': `attachment; filename="${asciiFallback}"; filename*=UTF-8''${encodedName}`,
         'Cache-Control': 'public, max-age=3600',
         'X-Content-Type-Options': 'nosniff',
-        'X-Debug-Src': src,
-        'X-Debug-Len': String(data.length),
       },
     });
   } catch (err) {
