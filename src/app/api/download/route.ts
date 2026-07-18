@@ -61,12 +61,17 @@ export async function GET(request: NextRequest) {
   if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
     data = fs.readFileSync(fullPath);
   } else {
-    const staticUrl = `${request.nextUrl.origin}/attachments/${encodeURIComponent(file)}`;
-    const fileRes = await fetch(staticUrl, { cache: 'no-store' });
-    if (!fileRes.ok) {
-      return new NextResponse('文件不存在', { status: 404 });
+    const origin = new URL(request.url).origin;
+    const staticUrl = `${origin}/attachments/${encodeURIComponent(file)}`;
+    try {
+      const fileRes = await fetch(staticUrl, { cache: 'no-store' });
+      if (!fileRes.ok) {
+        return new NextResponse('文件不存在', { status: 404 });
+      }
+      data = Buffer.from(await fileRes.arrayBuffer());
+    } catch {
+      return new NextResponse('文件读取失败', { status: 502 });
     }
-    data = Buffer.from(await fileRes.arrayBuffer());
   }
 
   const encodedName = encodeURIComponent(file);
