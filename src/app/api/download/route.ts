@@ -59,8 +59,10 @@ export async function GET(request: NextRequest) {
     // 优先本地读取；Vercel 等 serverless 环境下函数进程可能访问不到
     // public 文件系统，此时 fallback 到同源静态资源 URL 读取。
     let data: Buffer;
+    let src = 'unknown';
     if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
       data = fs.readFileSync(fullPath);
+      src = 'fs';
     } else {
       try {
         const origin = request.nextUrl.origin;
@@ -70,6 +72,7 @@ export async function GET(request: NextRequest) {
           return new NextResponse('文件不存在(静态)', { status: 404 });
         }
         data = Buffer.from(await fileRes.arrayBuffer());
+        src = 'fetch';
       } catch (e) {
         return new NextResponse(
           '文件读取失败: ' + (e instanceof Error ? e.message : String(e)),
@@ -78,20 +81,25 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    const encodedName = encodeURIComponent(file);
-    // filename 参数只保留最安全的 ASCII 字符（字母数字 . _ -），
-    // 其余（含 #、空格、中文）一律替换成 _，避免 undici 写响应头时校验失败；
-    // 中文显示交给 filename*=UTF-8''（标准 percent-encoding）。
+    // filename 参数只保留最安全的 ASCII 字符（字母数字 . _ -），其余替换成 _。
+    // 中文显示名交给 filename*=UTF-8''（标准 percent-encoding），安全且浏览器兼容。
     const asciiFallback = file.replace(/[^A-Za-z0-9._-]/g, '_');
+    const encodedName = encodeURIComponent(file);
 
-    return new NextResponse(data, {
+    // 关键修复：不手写 Content-Length（交给 undici 按 Uint8Array 体自动计算），
+    // 并用 Uint8Array 而非 Buffer 作为响应体，避免 undici 在响应写出阶段因
+    // Buffer+手动 Content-Length 不匹配而抛出 500（空响应体）。
+    const body = new Uint8Array(data);
+
+    return new NextResponse(body, {
       status: 200,
       headers: {
         'Content-Type': 'application/octet-stream',
-        'Content-Disposition': `attachment; filename="${asciiFallback}"`,
-        'Content-Length': String(data.length),
+        'Content-Disposition': `attachment; filename="${asciiFallback}"; filename*=UTF-8''${encodedName}`,
         'Cache-Control': 'public, max-age=3600',
         'X-Content-Type-Options': 'nosniff',
+        'X-Debug-Src': src,
+        'X-Debug-Len': String(data.length),
       },
     });
   } catch (err) {
