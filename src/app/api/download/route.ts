@@ -79,9 +79,10 @@ export async function GET(request: NextRequest) {
     }
 
     const encodedName = encodeURIComponent(file);
-    // HTTP 响应头的 filename 参数只能含 ASCII，否则 Node 会抛 Invalid character；
-    // 中文交给 filename*=UTF-8''，这里用 ASCII 兜底名（非 ASCII 替换成 _）
-    const asciiFallback = file.replace(/[^\x20-\x7E]/g, '_');
+    // filename 参数只保留最安全的 ASCII 字符（字母数字 . _ -），
+    // 其余（含 #、空格、中文）一律替换成 _，避免 undici 写响应头时校验失败；
+    // 中文显示交给 filename*=UTF-8''（标准 percent-encoding）。
+    const asciiFallback = file.replace(/[^A-Za-z0-9._-]/g, '_');
 
     return new NextResponse(data, {
       status: 200,
