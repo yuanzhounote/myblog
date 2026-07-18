@@ -88,7 +88,7 @@ export async function GET(request: NextRequest) {
       status: 200,
       headers: {
         'Content-Type': 'application/octet-stream',
-        'Content-Disposition': `attachment; filename="${asciiFallback}"; filename*=UTF-8''${encodedName}`,
+        'Content-Disposition': `attachment; filename="${asciiFallback}"`,
         'Content-Length': String(data.length),
         'Cache-Control': 'public, max-age=3600',
         'X-Content-Type-Options': 'nosniff',
