@@ -55,19 +55,30 @@ export async function GET(request: NextRequest) {
     return new NextResponse('非法路径', { status: 400 });
   }
 
-  if (!fs.existsSync(fullPath) || !fs.statSync(fullPath).isFile()) {
-    return new NextResponse('文件不存在', { status: 404 });
+  // 优先本地读取；Vercel 等 serverless 环境下函数进程可能访问不到
+  // public 文件系统，此时 fallback 到同源静态资源 URL 读取。
+  let data: Buffer;
+  if (fs.existsSync(fullPath) && fs.statSync(fullPath).isFile()) {
+    data = fs.readFileSync(fullPath);
+  } else {
+    const staticUrl = `${request.nextUrl.origin}/attachments/${encodeURIComponent(file)}`;
+    const fileRes = await fetch(staticUrl, { cache: 'no-store' });
+    if (!fileRes.ok) {
+      return new NextResponse('文件不存在', { status: 404 });
+    }
+    data = Buffer.from(await fileRes.arrayBuffer());
   }
 
-  const data = fs.readFileSync(fullPath);
   const encodedName = encodeURIComponent(file);
+  // HTTP 响应头的 filename 参数只能含 ASCII，否则 Node 会抛 Invalid character；
+  // 中文交给 filename*=UTF-8''，这里用 ASCII 兜底名（非 ASCII 替换成 _）
+  const asciiFallback = file.replace(/[^\x20-\x7E]/g, '_');
 
   return new NextResponse(data, {
     status: 200,
     headers: {
       'Content-Type': 'application/octet-stream',
-      // filename*=UTF-8'' 让中文文件名正确显示；filename 作为兜底
-      'Content-Disposition': `attachment; filename="${file}"; filename*=UTF-8''${encodedName}`,
+      'Content-Disposition': `attachment; filename="${asciiFallback}"; filename*=UTF-8''${encodedName}`,
       'Content-Length': String(data.length),
       'Cache-Control': 'public, max-age=3600',
       'X-Content-Type-Options': 'nosniff',
